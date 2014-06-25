@@ -1,0 +1,4 @@
+codeStyle
+=========
+
+Ciklum Appcelerator CodeStyle
