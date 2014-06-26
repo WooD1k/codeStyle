@@ -1,6 +1,6 @@
 № |Table of Contents|
----|
-1.|[requireCurlyBraces](#requireCurlyBraces)
+--- | --- 
+1.|[requireCurlyBraces](#requireCurlyBraces)|
 2.|[requireSpaceAfterKeywords](#requireSpaceAfterKeywords)
 3.|[requireSpaceBeforeBlockStatements](#requireSpaceBeforeBlockStatements)
 4.|[requireSpacesInConditionalExpression](#requireSpacesInConditionalExpression)
