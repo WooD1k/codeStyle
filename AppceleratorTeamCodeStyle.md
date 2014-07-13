@@ -426,13 +426,7 @@ var x = {
 
 Requires operators to appear before line breaks and not after.
 
-Type: `Array` or `Boolean`
-
-Values: Array of quoted operators or `true` to require all possible binary operators to appear before line breaks
-
-JSHint: [`laxbreak`](http://www.jshint.com/docs/options/#laxbreak)
-
-#### Example
+#### .json setup
 
 ```js
 "requireOperatorBeforeLineBreak": [
@@ -473,14 +467,10 @@ x = y
 
 Requires sticking unary operators to the right.
 
-Type: `Array` or `Boolean`
-
-Values: Array of quoted operators or `true` to disallow space after prefix for all unary operators
-
-#### Example
+#### .json setup
 
 ```js
-"disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-", "~", "!"]
+"disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "~", "!"],
 ```
 
 ##### Valid
@@ -500,11 +490,7 @@ x = ! y; y = ++ z;
 
 Requires sticking unary operators to the left.
 
-Type: `Array` or `Boolean`
-
-Values: Array of quoted operators or `true` to disallow space before postfix for all unary operators (i.e. increment/decrement operators)
-
-#### Example
+#### .json setup
 
 ```js
 "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"]
@@ -527,13 +513,7 @@ x = y ++; y = z --;
 
 Disallows sticking binary operators to the left.
 
-Type: `Array` or `Boolean`
-
-Values: Array of quoted operators or `true` to require space before all possible binary operators
-without comma operator, since it's rarely used with this rule
-
-
-#### Example
+#### .json setup
 
 ```js
 "requireSpaceBeforeBinaryOperators": [
@@ -547,7 +527,6 @@ without comma operator, since it's rarely used with this rule
     "===",
     "!=",
     "!=="
-    // etc
 ]
 ```
 
@@ -568,11 +547,7 @@ x!== y;
 
 Disallows sticking binary operators to the right.
 
-Type: `Array` or `Boolean`
-
-Values: Array of quoted operators or `true` to require space after all possible binary operators
-
-#### Example
+#### .json setup
 
 ```js
 "requireSpaceAfterBinaryOperators": [
@@ -586,7 +561,6 @@ Values: Array of quoted operators or `true` to require space after all possible 
     "===",
     "!=",
     "!=="
-    // etc
 ]
 ```
 
@@ -607,37 +581,13 @@ x +y;
 
 Requires identifiers to be camelCased or UPPERCASE_WITH_UNDERSCORES
 
-Type: `Boolean` or `String`
-
-Values: `true` or `"ignoreProperties"`
-
-JSHint: [`camelcase`](http://jshint.com/docs/options/#camelcase)
-
-#### Example
+#### .json setup
 
 ```js
-"requireCamelCaseOrUpperCaseIdentifiers": true
+"requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
 ```
 
-##### Valid for mode `true`
-
-```js
-var camelCase = 0;
-var CamelCase = 1;
-var _camelCase = 2;
-var camelCase_ = 3;
-var UPPER_CASE = 4;
-```
-
-##### Invalid for mode `true`
-
-```js
-var lower_case = 1;
-var Mixed_case = 2;
-var mixed_Case = 3;
-```
-
-##### Valid for mode `ignoreProperties`
+##### Valid
 
 ```js
 var camelCase = 0;
@@ -649,7 +599,7 @@ var obj.snake_case = 5;
 var camelCase = { snake_case: 6 };
 ```
 
-##### Invalid for mode `ignoreProperties`
+##### Invalid
 
 ```js
 var lower_case = 1;
@@ -663,11 +613,7 @@ var snake_case = { snake_case: 6 };
 
 Disallows multiple blank lines in a row.
 
-Type: `Boolean`
-
-Values: `true`
-
-#### Example
+#### .json setup
 
 ```js
 "disallowMultipleLineBreaks": true
@@ -696,15 +642,8 @@ Type: `String` or `Object`
 
 Values:
  - `"\""`: all strings require double quotes
- - `"'"`: all strings require single quotes
- - `true`: all strings require the quote mark first encountered in the source code
- - `Object`:
-    - `escape`: allow the "other" quote mark to be used, but only to avoid having to escape
-    - `mark`: the same effect as the non-object values
 
-JSHint: [`quotmark`](http://jshint.com/docs/options/#quotmark)
-
-#### Example
+#### .json setup
 
 ```js
 "validateQuoteMarks": "\""
@@ -728,13 +667,7 @@ var x = "x";
 Requires lines to not contain both spaces and tabs consecutively,
 or spaces after tabs only for alignment if "smart"
 
-Type: `Boolean` or `String`
-
-Values: `true` or `"smart"`
-
-JSHint: [`smarttabs`](http://www.jshint.com/docs/options/#smarttabs)
-
-#### Example
+#### .json setup
 
 ```js
 "disallowMixedSpacesAndTabs": "smart"
@@ -762,13 +695,7 @@ JSHint: [`smarttabs`](http://www.jshint.com/docs/options/#smarttabs)
 
 Requires all lines to end on a non-whitespace character
 
-Type: `Boolean`
-
-Values: `true`
-
-JSHint: [`trailing`](http://jshint.com/docs/options/#trailing)
-
-#### Example
+#### .json setup
 
 ```js
 "disallowTrailingWhitespace": true
@@ -791,13 +718,7 @@ var foo = "blah blah"; //<-- whitespace character here
 
 Disallows an extra comma following the final element of an array or object literal.
 
-Type: `Boolean`
-
-Values: `true`
-
-JSHint: [`es3`](http://jshint.com/docs/options/#es3)
-
-#### Example
+#### .json setup
 
 ```js
 "disallowTrailingComma": true
@@ -822,11 +743,7 @@ var bar = {a: "a", b: "b", }
 
 Requires placing line feed at file end.
 
-Type: `Boolean`
-
-Values: `true`
-
-#### Example
+#### .json setup
 
 ```js
 "requireLineFeedAtFileEnd": true
@@ -837,13 +754,7 @@ Values: `true`
 
 Requires member expressions to use dot notation when possible
 
-Type: `Boolean`
-
-Values: `true`
-
-JSHint: [`sub`](http://www.jshint.com/docs/options/#sub)
-
-#### Example
+#### .json setup
 
 ```js
 "requireDotNotation": true
@@ -870,11 +781,7 @@ var a = b['c'];
 
 Requires the variable to be the left hand operator when doing a boolean comparison
 
-Type: `Boolean`
-
-Values: `true`
-
-#### Example
+#### .json setup
 
 ```js
 "disallowYodaConditions": true
