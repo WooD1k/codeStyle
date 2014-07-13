@@ -57,7 +57,7 @@ Type: `Array`
 
 Values: Array of quoted keywords
 
-#### Example
+#### .json setup
 
 ```js
 "requireSpaceAfterKeywords": [
@@ -96,7 +96,7 @@ Type: `Boolean`
 
 Values: `true`
 
-#### Example
+#### .json setup
 
 ```js
 "requireSpaceBeforeBlockStatements": true
@@ -138,11 +138,7 @@ while (cond){
 
 Requires space before and/or after `?` or `:` in conditional expressions.
 
-Type: `Object` or `Boolean`
-
-Values: `"afterTest"`, `"beforeConsequent"`, `"afterConsequent"`, `"beforeAlternate"` as child properties, or `true` to set all properties to `true`. Child properties must be set to `true`.
-
-#### Example
+#### .json setup
 
 ```js
 "requireSpacesInConditionalExpression": {
@@ -157,7 +153,6 @@ Values: `"afterTest"`, `"beforeConsequent"`, `"afterConsequent"`, `"beforeAltern
 
 ```js
 var a = b ? c : d;
-var a= b ? c : d;
 ```
 
 ##### Invalid
@@ -173,11 +168,7 @@ var a = b ? c :d;
 
 Disallows multiple `var` declaration (except for-loop).
 
-Type: `Boolean`
-
-Values: `true`
-
-#### Example
+#### .json setup
 
 ```js
 "disallowMultipleVarDecl": true
@@ -204,11 +195,7 @@ var x = 1,
 
 Requires blocks to begin and end with a newline
 
-Type: `Boolean` or `Integer`
-
-Values: `true` validates all non-empty blocks, `Integer` specifies a minimum number of statements in the block before validating.
-
-#### Example
+#### .json setup
 
 ```js
 "requireBlocksOnNewline": true
@@ -229,33 +216,12 @@ var abc = function() {};
 if (true) {doSomething();}
 ```
 
-##### Valid for mode `1`
-
-```js
-if (true) {
-    doSomething();
-    doSomethingElse();
-}
-if (true) { doSomething(); }
-var abc = function() {};
-```
-
-##### Invalid
-
-```js
-if (true) { doSomething(); doSomethingElse(); }
-```
-
 <a name="disallowPaddingNewlinesInBlocks"/>
 ### 7. disallowPaddingNewlinesInBlocks
 
 Disallows blocks from beginning and ending with 2 newlines.
 
-Type: `Boolean`
-
-Values: `true` validates all non-empty blocks.
-
-#### Example
+#### .json setup
 
 ```js
 "disallowPaddingNewlinesInBlocks": true
@@ -286,13 +252,7 @@ if (true) {
 
 Disallows empty blocks (except for catch blocks).
 
-Type: `Boolean`
-
-Values: `true`
-
-JSHint: [`noempty`](http://jshint.com/docs/options/#noempty)
-
-#### Example
+#### .json setup
 
 ```js
 "disallowEmptyBlocks": true
@@ -316,11 +276,7 @@ if ( a == b ) { } else { c = d; }
 
 Disallows space after opening object curly brace and before closing.
 
-Type: `Boolean` or `String`
-
-Values: `"all"` or `true` for strict mode, `"nested"` ignores closing brackets in a row.
-
-#### Example
+#### .json setup
 
 ```js
 "disallowSpacesInsideObjectBrackets": "all"
@@ -330,12 +286,6 @@ Values: `"all"` or `true` for strict mode, `"nested"` ignores closing brackets i
 
 ```js
 var x = {a: {b: 1}};
-```
-
-##### Valid for mode `"nested"`
-
-```js
-var x = { a: {b: 1} };
 ```
 
 ##### Invalid
@@ -349,11 +299,7 @@ var x = { a: { b: 1 } };
 
 Disallows space after opening array square bracket and before closing.
 
-Type: `Boolean` or `String`
-
-Values: `"all"` or `true` for strict mode, `"nested"` ignores closing brackets in a row.
-
-#### Example
+#### .json setup
 
 ```js
 "disallowSpacesInsideArrayBrackets": "all"
@@ -363,12 +309,6 @@ Values: `"all"` or `true` for strict mode, `"nested"` ignores closing brackets i
 
 ```js
 var x = [[1]];
-```
-
-##### Valid for mode `"nested"`
-
-```js
-var x = [ [1] ];
 ```
 
 ##### Invalid
@@ -381,11 +321,7 @@ var x = [ [ 1 ] ];
 
 Disallows space after opening round bracket and before closing.
 
-Type: `Boolean`
-
-Values: `true`
-
-#### Example
+#### .json setup
 
 ```js
 "disallowSpacesInsideParentheses": true
@@ -412,13 +348,7 @@ Disallows identifiers that start or end in `_`, except for some popular exceptio
  - `__filename` (node.js global)
  - `__dirname` (node.js global)
 
-Type: `Boolean`
-
-Values: `true`
-
-JSHint: [`nomen`](http://www.jshint.com/docs/options/#nomen)
-
-#### Example
+#### .json setup
 
 ```js
 "disallowDanglingUnderscores": true
@@ -446,11 +376,7 @@ var x_y_ = 1;
 
 Disallows space after object keys.
 
-Type: `Boolean`
-
-Values: `true`
-
-#### Example
+#### .json setup
 
 ```js
 "disallowSpaceAfterObjectKeys": true
@@ -470,13 +396,7 @@ var x = {a : 1};
 
 Requires commas as last token on a line in lists.
 
-Type: `Boolean`
-
-Values: `true`
-
-JSHint: [`laxcomma`](http://www.jshint.com/docs/options/#laxcomma)
-
-#### Example
+#### .json setup
 
 ```js
 "requireCommaBeforeLineBreak": true
